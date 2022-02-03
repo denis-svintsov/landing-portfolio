@@ -24,4 +24,62 @@ window.addEventListener("DOMContentLoaded", () => {
          menuBody.classList.remove('_active');
       });
    }
+
+   // Слайдер
+   let position = 0;
+   const slidesToShow = 1;
+   const slidesToScroll = 1;
+   const container = document.querySelector(".slider-testimonail__container");
+   const track = document.querySelector(".slider-testimonail__track");
+   const btnPrev = document.querySelector(".slider-testimonail__button_prev");
+   const btnNext = document.querySelector(".slider-testimonail__button_next");
+   const items = document.querySelectorAll(".slider-testimonail__item");
+   const itemsCount = items.length;
+   const itemWidth = container.clientWidth / slidesToShow;
+   const movePosition = slidesToScroll * itemWidth;
+
+
+   items.forEach((item) => {
+      item.style.minWidth = `${itemWidth}px`;
+   });
+
+   btnPrev.addEventListener("click", () => {
+      const itemsLeft = Math.abs(position) / itemWidth;
+      position += itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+
+      btnPrev.classList.remove('_disabled');
+      btnNext.classList.remove('_disabled');
+      setPosition();
+      checkBtns();
+   });
+
+   btnNext.addEventListener("click", () => {
+      const itemsLeft = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
+
+      position -= itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+
+      btnPrev.classList.remove('_disabled');
+      btnNext.classList.remove('_disabled');
+      setPosition();
+      checkBtns();
+   });
+
+   const setPosition = () => {
+      track.style.transform = `translateX(${position}px)`;
+   };
+
+   const checkBtns = () => {
+      if (position === 0) {
+         btnPrev.classList.add('_disabled');
+         btnPrev.disabled;
+      }
+      if (position <= -(itemsCount - slidesToShow) * itemWidth) {
+         btnNext.classList.add('_disabled');
+         btnNext.disabled;
+      }
+      // btnPrev.disabled = position === 0;
+      // btnNext.disabled = position <= -(itemsCount - slidesToShow) * itemWidth;
+   };
+
+   checkBtns();
 });
