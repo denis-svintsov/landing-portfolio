@@ -683,7 +683,6 @@ body._lock {
 }
 
 .slider-testimonail__button {
-  cursor: pointer;
   margin: 0px 15px;
 }
 
@@ -926,6 +925,9 @@ body._lock {
   }
   .slider-testimonail__buttons {
     right: 37.5%;
+  }
+  .slider-testimonail__button {
+    cursor: pointer;
   }
   .item-testimonail__body {
     padding: 40px 0px 40px 4.4%;
