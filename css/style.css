@@ -680,40 +680,23 @@ body._lock {
 
 .slider-testimonail__buttons {
   position: absolute;
-  top: 90%;
-  right: 38.5%;
+  bottom: 0px;
+  right: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0px -7px;
 }
 
 .slider-testimonail__button {
-  padding: 0px 7px;
+  padding: 0px 15px;
 }
 
 .slider-testimonail__button._disabled {
   opacity: 0.5;
 }
 
-.item-testimonail {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .item-testimonail__image {
   display: none;
-}
-
-.item-testimonail__body {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 50%;
-          flex: 0 1 50%;
-  padding: 10% 0px 10% 4.4%;
 }
 
 .item-testimonail__quotation:not(:last-child) {
@@ -874,6 +857,20 @@ body._lock {
   .statistic__body {
     padding: 40px 40px 50px;
   }
+  .slider-testimonail__buttons {
+    right: 35%;
+  }
+  .slider-testimonail__button {
+    padding: 0px 7px;
+  }
+  .item-testimonail {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .item-testimonail__image {
     display: block;
     -webkit-box-flex: 0;
@@ -884,6 +881,12 @@ body._lock {
   .item-testimonail__portrait > img {
     max-height: 94%;
     bottom: 3%;
+  }
+  .item-testimonail__body {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+    padding: 40px 0px 40px 4.4%;
   }
 }
 
@@ -912,6 +915,12 @@ body._lock {
         -ms-flex: 0 1 25%;
             flex: 0 1 25%;
   }
+  .slider-testimonail__buttons {
+    right: 37.5%;
+  }
+  .item-testimonail__body {
+    padding: 40px 0px 40px 4.4%;
+  }
 }
 
 @media (min-width: 1199px) {
@@ -919,8 +928,8 @@ body._lock {
     padding: 78px 218px;
   }
   .slider-testimonail__buttons {
-    top: 95%;
-    right: 39.8%;
+    bottom: 80px;
+    right: 38.8%;
   }
 }
 
@@ -976,6 +985,9 @@ body._lock {
   .page__services {
     padding: 60px 0px;
   }
+  .page__testimonail {
+    padding: 30px 0px 70px 0px;
+  }
   .header__body {
     min-height: 80px;
   }
@@ -1022,6 +1034,9 @@ body._lock {
   }
   .page__services {
     padding: 30px 0px;
+  }
+  .page__testimonail {
+    padding: 30px 0px 40px 0px;
   }
   .header__body {
     min-height: 60px;
@@ -1165,6 +1180,13 @@ body._lock {
   }
   .item-portfolio__text:not(:last-child) {
     margin: 0px 0px 10px 0px;
+  }
+  .slider-testimonail__container {
+    padding: 0px 0px 40px 0px;
+  }
+  .slider-testimonail__buttons {
+    -webkit-transform: translate(50%, 0);
+            transform: translate(50%, 0);
   }
 }
 
