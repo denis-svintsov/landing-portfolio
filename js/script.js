@@ -47,6 +47,8 @@ window.addEventListener("DOMContentLoaded", () => {
          items.forEach((item) => {
             item.style.minWidth = `${itemWidth}px`;
          });
+         setPosition();
+         checkBtns();
       });
    });
 
