@@ -40,6 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
    [`load`, `resize`].forEach(it => {
       window.addEventListener(it, () => {
+         position = 0;
          itemsCount = items.length;
          itemWidth = container.clientWidth / slidesToShow;
          movePosition = slidesToScroll * itemWidth;
@@ -48,6 +49,8 @@ window.addEventListener("DOMContentLoaded", () => {
             item.style.minWidth = `${itemWidth}px`;
          });
          setPosition();
+         btnPrev.classList.remove('_disabled');
+         btnNext.classList.remove('_disabled');
          checkBtns();
       });
    });
