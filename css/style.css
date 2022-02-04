@@ -662,14 +662,6 @@ body._lock {
   transition: all 0.3s ease 0s;
 }
 
-.item-portfolio__link:hover {
-  color: #ffa800;
-}
-
-.item-portfolio__link:hover::after {
-  background: url("../img/icons/link-arrow-hover.svg") center/cover no-repeat;
-}
-
 .testimonail {
   color: #fff;
 }
@@ -914,6 +906,12 @@ body._lock {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 25%;
             flex: 0 1 25%;
+  }
+  .item-portfolio__link:hover {
+    color: #ffa800;
+  }
+  .item-portfolio__link:hover::after {
+    background: url("../img/icons/link-arrow-hover.svg") center/cover no-repeat;
   }
   .slider-testimonail__buttons {
     right: 37.5%;
