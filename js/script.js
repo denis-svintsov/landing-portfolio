@@ -34,13 +34,20 @@ window.addEventListener("DOMContentLoaded", () => {
    const btnPrev = document.querySelector(".slider-testimonail__button_prev");
    const btnNext = document.querySelector(".slider-testimonail__button_next");
    const items = document.querySelectorAll(".slider-testimonail__item");
-   const itemsCount = items.length;
-   const itemWidth = container.clientWidth / slidesToShow;
-   const movePosition = slidesToScroll * itemWidth;
+   let itemsCount = items.length;
+   let itemWidth = container.clientWidth / slidesToShow;
+   let movePosition = slidesToScroll * itemWidth;
 
+   [`load`, `resize`].forEach(it => {
+      window.addEventListener(it, () => {
+         itemsCount = items.length;
+         itemWidth = container.clientWidth / slidesToShow;
+         movePosition = slidesToScroll * itemWidth;
 
-   items.forEach((item) => {
-      item.style.minWidth = `${itemWidth}px`;
+         items.forEach((item) => {
+            item.style.minWidth = `${itemWidth}px`;
+         });
+      });
    });
 
    btnPrev.addEventListener("click", () => {
