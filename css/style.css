@@ -1262,6 +1262,10 @@ body._lock {
   .footer {
     padding: 30px 0px;
   }
+  .socials-footer {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
   .menu__icon {
     display: block;
     z-index: 5;
