@@ -94,4 +94,19 @@ window.addEventListener("DOMContentLoaded", () => {
    };
 
    checkBtns();
+
+   // Аккордеон
+   document.querySelectorAll('.item-accordion-footer__trigger').forEach((item) =>
+      item.addEventListener("click", () => {
+         const parent = item.parentNode;
+
+         if (parent.classList.contains('_active')) {
+            parent.classList.remove('_active');
+         } else {
+            // document.querySelectorAll('.item-accordion-footer')
+            //    .forEach((child) => child.classList.remove('_active'));
+            parent.classList.add('_active');
+         }
+      })
+   );
 });
