@@ -4,6 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
    <link rel="stylesheet" href="css/style.css">
    <title>Portfolio</title>
 </head>
@@ -242,10 +243,12 @@
          </section>
          <div class="page__testimonail testimonail">
             <div class="testimonail__container _container">
-               <div class="testimonail__slider slider-testimonail slider">
-                  <div class="slider-testimonail__container slider__container">
-                     <div class="slider-testimonail__track slider__track">
-                        <div class="slider-testimonail__item item-testimonail slider__item">
+               <div class="testimonail__slider slider-testimonail">
+                  <!-- Additional required wrapper -->
+                  <div class="slider-testimonail__wrapper swiper-wrapper">
+                     <!-- Slides -->
+                     <div class="slider-testimonail__slide swiper-slide">
+                        <div class="slider-testimonail__item item-testimonail">
                            <div class="item-testimonail__image portrait">
                               <div class="item-testimonail__bg portrait__bg">
                                  <img src="img/testimonail/bg-image.png" alt="">
@@ -271,8 +274,9 @@
                               <div class="item-testimonail__info">Mohammad Musa - CEO at Company</div>
                            </div>
                         </div>
-
-                        <div class="slider-testimonail__item item-testimonail slider__item">
+                     </div>
+                     <div class="slider-testimonail__slide swiper-slide">
+                        <div class="slider-testimonail__item item-testimonail">
                            <div class="item-testimonail__image portrait">
                               <div class="item-testimonail__bg portrait__bg">
                                  <img src="img/testimonail/bg-image.png" alt="">
@@ -287,17 +291,20 @@
                               </div>
                               <div class="item-testimonail__text">
                                  <p>
-                                    Managed Services team acts like an extension of yours to expertly respond to any and
+                                    Managed Services team acts like an extension of yours to expertly respond to any
+                                    and
                                     all feedback, and scan and evaluate reviews for any legal concerns, profanity or
-                                    slander, or any policy violations of community and content. Services, analytics and
+                                    slander, or any policy violations of community and content. Services, analytics
+                                    and
                                     reports can be customized by location, project or initiative.
                                  </p>
                               </div>
                               <div class="item-testimonail__info">Mohammad Musa - CEO at Company</div>
                            </div>
                         </div>
-
-                        <div class="slider-testimonail__item item-testimonail slider__item">
+                     </div>
+                     <div class="slider-testimonail__slide swiper-slide">
+                        <div class="slider-testimonail__item item-testimonail">
                            <div class="item-testimonail__image portrait">
                               <div class="item-testimonail__bg portrait__bg">
                                  <img src="img/testimonail/bg-image.png" alt="">
@@ -312,9 +319,11 @@
                               </div>
                               <div class="item-testimonail__text">
                                  <p>
-                                    Managed Services team acts like an extension of yours to expertly respond to any and
+                                    Managed Services team acts like an extension of yours to expertly respond to any
+                                    and
                                     all feedback, and scan and evaluate reviews for any legal concerns, profanity or
-                                    slander, or any policy violations of community and content. Services, analytics and
+                                    slander, or any policy violations of community and content. Services, analytics
+                                    and
                                     reports can be customized by location, project or initiative.
                                  </p>
                               </div>
@@ -322,18 +331,110 @@
                            </div>
                         </div>
                      </div>
-                     <div class="slider-testimonail__buttons slider__buttons">
-                        <div class="slider-testimonail__button slider-testimonail__button_prev"><img
-                              src="img/icons/prev-btn.svg" alt=""></div>
-                        <div class="slider-testimonail__button slider-testimonail__button_next"><img
-                              src="img/icons/next-btn.svg" alt=""></div>
-                     </div>
+                  </div>
+                  <!-- If we need navigation buttons -->
+                  <div class="slider-testimonail__buttons">
+                     <div class="slider-testimonail__button slider-testimonail__button_prev swiper-button-prev"></div>
+                     <div class="slider-testimonail__button slider-testimonail__button_next swiper-button-next"></div>
                   </div>
                </div>
             </div>
          </div>
          <div class="page__blog blog">
-            <div class="blog__container _container"></div>
+            <div class="blog__container _container">
+               <!-- Slider main container -->
+               <div class="blog__slider slider-blog">
+                  <!-- Additional required wrapper -->
+                  <div class="slider-blog__wrapper swiper-wrapper">
+                     <!-- Slides -->
+                     <div class="slider-blog__slide swiper-slide">
+                        <div class="slider-blog__item item-blog">
+                           <a href="#" class="item-blog__image">
+                              <img src="img/blog/blog.jpg" alt="">
+                           </a>
+                           <div class="item-blog__body">
+                              <h4 class="item-blog__title"><a href="#">How This Agency Helped My Business And Career
+                                    Journey?</a></h4>
+                              <div class="item-blog__text">
+                                 <p>
+                                    A successful marketing plan relies heavily on the pulling-power of advertising copy.
+                                    writing result-oriented ad copy is dificult, as it must appeal to, entice, and
+                                    onviced consumers tp action.
+                                 </p>
+                              </div>
+                              <div class="item-blog__info">
+                                 <div class="item-blog__category">PUBLISHED IN <a href="#">Marketing</a> Category</div>
+                                 <div class="item-blog__data">05 jun, 2021</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="slider-blog__slide swiper-slide">
+                        <div class="slider-blog__item item-blog">
+                           <a href="#" class="item-blog__image">
+                              <img src="img/blog/blog.jpg" alt="">
+                           </a>
+                           <div class="item-blog__body">
+                              <h4 class="item-blog__title"><a href="#">How This Agency Helped My Business And Career
+                                    Journey?</a></h4>
+                              <div class="item-blog__text">
+                                 <p>
+                                    A successful marketing plan relies heavily on the pulling-power of advertising copy.
+                                    writing result-oriented ad copy is dificult, as it must appeal to, entice, and
+                                    onviced consumers tp action.
+                                 </p>
+                              </div>
+                              <div class="item-blog__info">
+                                 <div class="item-blog__category">PUBLISHED IN <span>Marketing</span> Category</div>
+                                 <div class="item-blog__data">05 jun, 2021</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="slider-blog__slide swiper-slide">
+                        <div class="slider-blog__item item-blog">
+                           <a href="#" class="item-blog__image">
+                              <img src="img/blog/blog.jpg" alt="">
+                           </a>
+                           <div class="item-blog__body">
+                              <h4 class="item-blog__title"><a href="#">How This Agency Helped My Business And Career
+                                    Journey?</a></h4>
+                              <div class="item-blog__text">
+                                 <p>
+                                    A successful marketing plan relies heavily on the pulling-power of advertising copy.
+                                    writing result-oriented ad copy is dificult, as it must appeal to, entice, and
+                                    onviced consumers tp action.
+                                 </p>
+                              </div>
+                              <div class="item-blog__info">
+                                 <div class="item-blog__category">PUBLISHED IN <span>Marketing</span> Category</div>
+                                 <div class="item-blog__data">05 jun, 2021</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- If we need scrollbar -->
+                  <div class="slider-blog__scrollbar swiper-scrollbar"></div>
+               </div>
+               <div class="blog__content">
+                  <h3 class="blog__title">My Blog And News</h3>
+                  <div class="blog__text">
+                     <p>
+                        If It’s abillboard ad, you’ll need a super catchy headline due to the speed at which people will
+                        pass.
+                     </p>
+                  </div>
+                  <a href="#" class="blog__link">Go To The Blog</a>
+                  <div class="slider-blog__buttons">
+                     <!-- If we need navigation buttons -->
+                     <div class="slider-blog__button slider-blog__button_prev swiper-button-prev"></div>
+                     <div class="slider-blog__button slider-blog__button_next swiper-button-next"></div>
+                  </div>
+               </div>
+            </div>
          </div>
       </main>
       <footer class="footer">
@@ -449,6 +550,7 @@
          </div>
       </footer>
    </div>
+   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
    <script src="js/script.js"></script>
 </body>
 

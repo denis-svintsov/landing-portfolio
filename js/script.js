@@ -26,74 +26,98 @@ window.addEventListener("DOMContentLoaded", () => {
    }
 
    // Слайдер
-   let position = 0;
-   const slidesToShow = 1;
-   const slidesToScroll = 1;
-   const container = document.querySelector(".slider-testimonail__container");
-   const track = document.querySelector(".slider-testimonail__track");
-   const btnPrev = document.querySelector(".slider-testimonail__button_prev");
-   const btnNext = document.querySelector(".slider-testimonail__button_next");
-   const items = document.querySelectorAll(".slider-testimonail__item");
-   let itemsCount = items.length;
-   let itemWidth = container.clientWidth / slidesToShow;
-   let movePosition = slidesToScroll * itemWidth;
+   const slider_1 = new Swiper('.slider-testimonail', {
+      // Optional parameters
 
-   [`load`, `resize`].forEach(it => {
-      window.addEventListener(it, () => {
-         position = 0;
-         itemsCount = items.length;
-         itemWidth = container.clientWidth / slidesToShow;
-         movePosition = slidesToScroll * itemWidth;
-
-         items.forEach((item) => {
-            item.style.minWidth = `${itemWidth}px`;
-         });
-         setPosition();
-         btnPrev.classList.remove('_disabled');
-         btnNext.classList.remove('_disabled');
-         checkBtns();
-      });
+      // Navigation arrows
+      navigation: {
+         nextEl: '.slider-testimonail__button_next',
+         prevEl: '.slider-testimonail__button_prev',
+      },
    });
 
-   btnPrev.addEventListener("click", () => {
-      const itemsLeft = Math.abs(position) / itemWidth;
-      position += itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+   const slider_2 = new Swiper('.slider-blog', {
+      // Optional parameters
 
-      btnPrev.classList.remove('_disabled');
-      btnNext.classList.remove('_disabled');
-      setPosition();
-      checkBtns();
+      // Navigation arrows
+      navigation: {
+         nextEl: '.slider-blog__button_next',
+         prevEl: '.slider-blog__button_prev',
+      },
+      scrollbar: {
+         el: '.slider-blog__scrollbar',
+         draggable: true,
+      },
    });
 
-   btnNext.addEventListener("click", () => {
-      const itemsLeft = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
+   // let position = 0;
+   // const slidesToShow = 1;
+   // const slidesToScroll = 1;
+   // const container = document.querySelector(".slider-testimonail__container");
+   // const track = document.querySelector(".slider-testimonail__track");
+   // const btnPrev = document.querySelector(".slider-testimonail__button_prev");
+   // const btnNext = document.querySelector(".slider-testimonail__button_next");
+   // const items = document.querySelectorAll(".slider-testimonail__item");
+   // let itemsCount = items.length;
+   // let itemWidth = container.clientWidth / slidesToShow;
+   // let movePosition = slidesToScroll * itemWidth;
 
-      position -= itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+   // [`load`, `resize`].forEach(it => {
+   //    window.addEventListener(it, () => {
+   //       position = 0;
+   //       itemsCount = items.length;
+   //       itemWidth = container.clientWidth / slidesToShow;
+   //       movePosition = slidesToScroll * itemWidth;
 
-      btnPrev.classList.remove('_disabled');
-      btnNext.classList.remove('_disabled');
-      setPosition();
-      checkBtns();
-   });
+   //       items.forEach((item) => {
+   //          item.style.minWidth = `${itemWidth}px`;
+   //       });
+   //       setPosition();
+   //       btnPrev.classList.remove('_disabled');
+   //       btnNext.classList.remove('_disabled');
+   //       checkBtns();
+   //    });
+   // });
 
-   const setPosition = () => {
-      track.style.transform = `translateX(${position}px)`;
-   };
+   // btnPrev.addEventListener("click", () => {
+   //    const itemsLeft = Math.abs(position) / itemWidth;
+   //    position += itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
 
-   const checkBtns = () => {
-      if (position === 0) {
-         btnPrev.classList.add('_disabled');
-         btnPrev.disabled;
-      }
-      if (position <= -(itemsCount - slidesToShow) * itemWidth) {
-         btnNext.classList.add('_disabled');
-         btnNext.disabled;
-      }
-      // btnPrev.disabled = position === 0;
-      // btnNext.disabled = position <= -(itemsCount - slidesToShow) * itemWidth;
-   };
+   //    btnPrev.classList.remove('_disabled');
+   //    btnNext.classList.remove('_disabled');
+   //    setPosition();
+   //    checkBtns();
+   // });
 
-   checkBtns();
+   // btnNext.addEventListener("click", () => {
+   //    const itemsLeft = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
+
+   //    position -= itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+
+   //    btnPrev.classList.remove('_disabled');
+   //    btnNext.classList.remove('_disabled');
+   //    setPosition();
+   //    checkBtns();
+   // });
+
+   // const setPosition = () => {
+   //    track.style.transform = `translateX(${position}px)`;
+   // };
+
+   // const checkBtns = () => {
+   //    if (position === 0) {
+   //       btnPrev.classList.add('_disabled');
+   //       btnPrev.disabled;
+   //    }
+   //    if (position <= -(itemsCount - slidesToShow) * itemWidth) {
+   //       btnNext.classList.add('_disabled');
+   //       btnNext.disabled;
+   //    }
+   //    // btnPrev.disabled = position === 0;
+   //    // btnNext.disabled = position <= -(itemsCount - slidesToShow) * itemWidth;
+   // };
+
+   // checkBtns();
 
    // Аккордеон
    document.querySelectorAll('.item-accordion-footer__trigger').forEach((item) =>
